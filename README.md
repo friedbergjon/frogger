@@ -8,50 +8,68 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Sep 25th| Project Description | Incomplete
-|Sep 25th| Wireframes / Priority Matrix / Functional Components | Incomplete
-|Sep 26th| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|Sep 27th| Pseudocode / actual code | Incomplete
-|Sep 28th| Initial Clickable Model  | Incomplete
-|Sep 29th| MVP | Incomplete
-|Sep 30th| Present | Incomplete
+|May 6th| Project Description | Complete
+|May 6th| Wireframes / Priority Matrix / Functional Components | Complete
+|May 7th| Core Application Structure (HTML, CSS, etc.) | Incomplete
+|May 7th| Pseudocode / actual code | Incomplete
+|May 8th| Initial Clickable Model  | Incomplete
+|May 9th | MVP | Incomplete
+|May 10th| Present | Incomplete
 
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+The game frogger, grass on top and bottom of screen, road with lanes in the middle. Frog tries to hop from one end of screen to the other (bottom to top), if frog gets to top, win, level up
 
 ## Wireframes
 
-Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
+[Wireframe 1](https://git.generalassemb.ly/friedbergjon/frogger/blob/23a3eb526026b24b471642ff12276e6aec536d8a/Project_1_pics/20190506_115001.jpg)
+
+[Wireframe 2]
+(https://git.generalassemb.ly/friedbergjon/frogger/blob/23a3eb526026b24b471642ff12276e6aec536d8a/Project_1_pics/20190506_115035.jpg)
+
+[Wireframe 3]
+(https://git.generalassemb.ly/friedbergjon/frogger/blob/23a3eb526026b24b471642ff12276e6aec536d8a/Project_1_pics/20190506_115044.jpg)
+
+
 
 ## Priority Matrix
 
 Include a full list of features that have been prioritized based on the `Time and Importance` Matix.  
 
-### MVP/PostMVP - 5min
+[Matrix]
+(https://git.generalassemb.ly/friedbergjon/frogger/blob/23a3eb526026b24b471642ff12276e6aec536d8a/Project_1_pics/20190506_122912.jpg)
 
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
 #### MVP 
 
-- Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
-- Save their choices in firebase
+ -Collision between Frog and Car 5 hrs
+
+-Displaying grass outside of window view with continual level increase 5 hrs
+
+-Frog and car movement 4 hrs
+
+-Changing and displaying score 3 hrs
+
+
 
 #### PostMVP 
 
-- Add user auth
+-Car-speed change with level increase 3 hrs
+-Potholes in road 3 hrs
+-graphics and animations 3 hrs
+
 
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe.
 
+
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Collision between Frog and Car| H | 5hrs|  hrs |  hrs |
+| -Displaying grass outside of window view with continual level increase | H | 5hrs|  hrs |  hrs |
+| -Frog and car movement| H | 4hrs| hrs | hrs |
+| -Changing and displaying score| H | 3hrs| hrs | hrs |
 
 
 ## Additional Libraries
