@@ -1,40 +1,39 @@
 
-body {
-  margin: 0 auto;
-   flex-wrap: wrap; 
-  
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+   background-image: url(frogger-images/frogger-background.png);
+   background-size: cover;
+   background-position: center;
+   image-rendering: optimizeSpeed;
+   image-rendering: -moz-crisp-edges;
+   image-rendering: -o-crisp-edges;
+   image-rendering: -webkit-optimize-contrast;
+   image-rendering: crisp-edges;
+   overflow: hidden;
 }
-
-
-
-
-#background{
-   
-    justify-content: center;
-    width: 100%;
-    margin: 0 auto;
-}
-
-
-
-
-
-
-
 
 
 .frog {
   position: absolute;
-  background-image: url(frogger.png/frogger-frog.png);
-  background-position: -100px -160px;
-  width: 110px;
-  height: 115px;
+  background-image: url(frogger-images/frogger-frog.png);
+  width: 80px;
+  height: 60px;
+  
   /* GIVE THE LEFT AND TOP POSITION OF DUCK HAVE A TRANSITION EFFECT
   ONLY NEEDED CHANGE IN THIS FILE!! */
-  transition: top 2s, left 2s;
-  transition-timing-function: linear;
-  background-repeat: no-repeat;
+  
 }
-.frog {
+/* .frog {
   background-position: -100px -160px;
+} */
+
+
+.car {
+  position: absolute;
+  background-image: url(frogger-images/frogger-car.png);
+  width: 90px;
+  height: 60px;
 }
