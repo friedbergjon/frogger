@@ -36,4 +36,7 @@ html {
   background-image: url(frogger-images/frogger-car.png);
   width: 90px;
   height: 60px;
+  transition:3s linear;
+  transform: translateX(0px);
+
 }
