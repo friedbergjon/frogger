@@ -13,24 +13,53 @@ let div = document.createElement('div');
 let div2 = document.createElement('div');
 div2.className = 'car';
 body.appendChild(div2);
-div2.style.left = (0.5 * window.innerWidth) + "px";
+div2.style.left = (0.6  * window.innerWidth) + "px";
 div2.style.top = (0.5 * window.innerHeight) + "px";
 
 let div3 = document.createElement('div');
 div3.className = 'car';
 body.appendChild(div3);
-div3.style.left = (0.5 * window.innerWidth) + "px";
+div3.style.left = (0.6 * window.innerWidth) + "px";
 div3.style.top = (0.2 * window.innerHeight) + "px";
+let xAxis = 800;
 
-
-setTimeout(function() {
-  div2.style.transform = "translateX(-1600px)";
-}, 200);
-
-
-
-setTimeout(function() {
-  div3.style.transform = "translateX(-800px)";
-}, 200);
+function moveCar(){
+  div2.style.transform = `translateX(${xAxis}px)`;
 }
 
+
+//moveCar();
+
+
+setInterval(()=>{
+  
+  xAxis-=10;
+  moveCar();
+},10)
+
+setInterval(()=>{
+  xAxis = 800;
+  moveCar();
+},5000)
+
+}
+
+// function carLoop() {
+//   for (i=0; i<= div.length; i++){
+// setInterval(function() {
+//     div2.style.transform = "translateX(-1100px)";
+// }, 4000);
+
+
+// setInterval(function() {
+//   div3.style.transform = "translateX(-1100px)";
+// }, 4000);
+// }
+//     div3.style.transform = "translateX(-1100px)";
+//     div2.style.transform = "translateX(-1100px)";
+
+
+
+// }
+// setInterval(carLoop, 1000)
+// }
