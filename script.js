@@ -58,10 +58,8 @@ const canMoveTo = (x, y) => {
  const moveRight = () => {
      if (canMoveTo(frogPosition.x + .5, frogPosition.y)) {
          frogPosition.x += .5;
-        //  console.log(frogPosition)
-         if (frogPosition.x === div2Position.x ||frogPosition.x === div3Position.x ||frogPosition.x === div4Position.x){
-          xRight = true
-        }
+        
+         console.log(div2Position.x)
          moveCharacterTo();
      }
  }
@@ -70,20 +68,20 @@ const canMoveTo = (x, y) => {
      if (canMoveTo(frogPosition.x - .5, frogPosition.y)) {
          frogPosition.x -= .5;
          //help from Michael//
-        //  console.log(frogPosition)
+      
          //if frog coordinates equal car coordinates//
-         if (frogPosition.x === div2Position.x ||frogPosition.x === div3Position.x ||frogPosition.x === div4Position.x){
-          xLeft = true
-         }
+        //  if (frogPosition.x === div2Position.x ||frogPosition.x === div3Position.x ||frogPosition.x === div4Position.x){
+        //    alert(frog dead!)
+         
          moveCharacterTo();
-        
      }
- }
- console.log(xLeft)
+     }
+ 
+    
  const moveDown = () => {
      if (canMoveTo(frogPosition.x , frogPosition.y + .5)) {
          frogPosition.y += .5;
-         console.log(frogPosition)
+         
          moveCharacterTo();
      }
  }
@@ -91,11 +89,11 @@ const canMoveTo = (x, y) => {
  const moveUp = () => {
      if (canMoveTo(frogPosition.x , frogPosition.y - .5)) {
          frogPosition.y -= .5;
-         console.log(frogPosition)
+      
          moveCharacterTo();
      }
  }
- console.log(frogPosition.y)
+ 
  document.body.addEventListener('keydown', evt => {
      const keyCode = evt.keyCode;
   
@@ -130,17 +128,22 @@ let xAxisCar1 = 800;
 let xAxisCar2 = 800;
 let xAxisCar3 = 1000;
 
-// let yAxisCar1 = 500;
-// let yAxisCar2 = 400;
-// let yAxisCar3 = 300;
-
 
 function moveCar(){
-  div2.style.transform = `translateX(${xAxisCar1}px)`;
-  div3.style.transform = `translateX(${xAxisCar2}px)`;
-  div4.style.transform = `translateX(${xAxisCar3}px)`;
+  // Mohammed's help on changing the format of this function to represent current values of car rather than initial, for "if car coord === frog coord" collision function
+  // div2.style.transform = `translateX(${xAxisCar1}px)`;
+  // div3.style.transform = `translateX(${xAxisCar2}px)`;
+  // div4.style.transform = `translateX(${xAxisCar3}px)`;
+  div2.style.left = (parseFloat(div2.style.left) - 10)+"px"
+  div3.style.left = (parseFloat(div2.style.left) - 5)+"px"
+  div4.style.left = (parseFloat(div2.style.left) - 10)+"px"
+  
+  
 }
-
+// Mohammed's help on random function
+// function randomFunction(range){
+//   return Math.floor(Math.random() * range ) 
+// }
 ///Mohammed helped with getting the cars to loop//
 
 setInterval(()=>{
@@ -148,22 +151,24 @@ setInterval(()=>{
   xAxisCar2-=10;
   xAxisCar3-=5;
   
-  // yAxisCar1-=0.1;
-  // yAxisCar2-=0.1;
-  // yAxisCar3-=0.1;
+ 
   moveCar();
-},10)
 
+},10)
+ 
 setInterval(()=>{
-  xAxisCar1 = 900;
-  xAxisCar2 = 1000;
-  xAxisCar3 = 800;
+  // xAxisCar1 = 900;
+  // xAxisCar2 = 1000;
+  // xAxisCar3 = 800;
+  div2.style.left = 900+"px"
+  div3.style.left = 1000+"px"
+  div4.style.left = 800+"px"
  
   // yAxisCar1 = 500;
   // yAxisCar2 =400;
   // yAxisCar3 =300;
   moveCar();
-},5000)
+},3000)
 
 // collision detection
 
