@@ -22,12 +22,23 @@ div3.className = 'car';
 body.appendChild(div3);
 div3.style.left = (0.6 * window.innerWidth) + "px";
 div3.style.top = (0.2 * window.innerHeight) + "px";
+
+let div4 = document.createElement('div');
+div4.className = 'car';
+body.appendChild(div4);
+div4.style.left = (0.6 * window.innerWidth) + "px";
+div4.style.top = (0.7 * window.innerHeight) + "px";
+
+
 let xAxis = 800;
 let x1Axis = 800;
+let x2Axis = 1000;
 
 function moveCar(){
   div2.style.transform = `translateX(${xAxis}px)`;
   div3.style.transform = `translateX(${x1Axis}px)`;
+  div4.style.transform = `translateX(${x2Axis}px)`;
+
 }
 
 
@@ -35,12 +46,14 @@ function moveCar(){
 
 
 setInterval(()=>{
-  x1Axis-=10
+  x2Axis-= 8;
+  x1Axis-=10;
   xAxis-=5;
   moveCar();
 },10)
 
 setInterval(()=>{
+  x2Axis = 900;
   x1Axis = 1000;
   xAxis = 800;
   moveCar();
