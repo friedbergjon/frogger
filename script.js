@@ -1,13 +1,15 @@
 
 
   const body = document.body;
-  
+const frogPosition = {x: 1, y: 1}
+
+ 
   
 let frog = document.createElement('div');
   frog.className ='frog';
   body.appendChild(frog);
-     frog.style.left = (0.5 * window.innerWidth) + "px";
-     frog.style.top = (0.7 * window.innerHeight) + "px";
+     frog.style.left = (frogPosition.x * 100) + "px";
+     frog.style.top = (frogPosition.y * 100) + "px";
     
 
 let div2 = document.createElement('div');
@@ -41,15 +43,17 @@ function moveCar(){
 }
 
 //blerf code for keyboard movement, went over in class//
-const frogPosition = {x: 0, y: 0}
 
 const isCoordinateInGrid = (x, y) => {
-  return !(x < 0 || y < 0 || x > window.innerWidth + "px" || y > window.innerHeight + "px");
+  console.log(x*100)
+  console.log(window.innerWidth)
+  return !(x < 0 || y < 0 || x*100 > window.innerWidth  || y*100 > window.innerHeight );
 
 }
 
 const canMoveTo = (x, y) => {
     if (!isCoordinateInGrid(x, y)) {
+
          return false;
      }
      return true;
@@ -104,6 +108,8 @@ const canMoveTo = (x, y) => {
          break;
      }
  })
+
+ //with help from Rachel//
  const moveCharacterTo = (x, y) => {
   const charElement = document.querySelector('.frog');
   charElement.style.left = `${(frogPosition.x * 100)}px`;
