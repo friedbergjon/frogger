@@ -9,13 +9,17 @@ let div4Position = {x:8, y:5.6}
 // function deadFrog() {
   
 // }
+// function collision() {
 
+
+// }
 
 let frog = document.createElement('div');
   frog.className ='frog';
   body.appendChild(frog);
      frog.style.left = (frogPosition.x * 100) + "px";
      frog.style.top = (frogPosition.y * 100) + "px";
+
 
     
 
@@ -39,6 +43,12 @@ div4.style.left = (div4Position.x * 100) + "px";
 div4.style.top = (div4Position.y * 100) + "px";
 
 
+//code to attain height of frog for collision detection//
+// https://stackoverflow.com/questions/294250/how-do-i-retrieve-an-html-elements-actual-width-and-height
+let height = frog.offsetHeight;
+let width = frog.offsetWidth;
+console.log(width)
+
 //blerf code for keyboard movement, went over in class//
 
 const isCoordinateInGrid = (x, y) => {
@@ -59,7 +69,7 @@ const canMoveTo = (x, y) => {
      if (canMoveTo(frogPosition.x + .5, frogPosition.y)) {
          frogPosition.x += .5;
         
-         console.log(div2Position.x)
+     
          moveCharacterTo();
      }
  }
@@ -134,9 +144,9 @@ function moveCar(){
   div2.style.transform = `translateX(${xAxisCar1}px)`;
   div3.style.transform = `translateX(${xAxisCar2}px)`;
   div4.style.transform = `translateX(${xAxisCar3}px)`;
-  div2.style.left = (parseFloat(div2.style.left) - 5)+"px"
-  div3.style.left = (parseFloat(div2.style.left) - 5)+"px"
-  div4.style.left = (parseFloat(div2.style.left) - 5)+"px"
+  // div2.style.left = (parseFloat(div2.style.left) - 10)+"px"
+  // div3.style.left = (parseFloat(div2.style.left) - 5)+"px"
+  // div4.style.left = (parseFloat(div2.style.left) - 10)+"px"
   
   
 }
@@ -147,9 +157,9 @@ function moveCar(){
 ///Mohammed helped with getting the cars to loop//
 
 setInterval(()=>{
-  xAxisCar1-= .8;
-  xAxisCar2-=.50;
-  xAxisCar3-=.1;
+  xAxisCar1-= 4;
+  xAxisCar2-=9;
+  xAxisCar3-=7;
   
  
   moveCar();
@@ -157,12 +167,12 @@ setInterval(()=>{
 },10)
  
 setInterval(()=>{
-  xAxisCar1 = 900;
-  xAxisCar2 = 1000;
+  xAxisCar1 = 800;
+  xAxisCar2 = 800;
   xAxisCar3 = 800;
-  div2.style.left = 900+"px"
-  div3.style.left = 1000+"px"
-  div4.style.left = 900+"px"
+  // div2.style.left = 900+"px"
+  // div3.style.left = 1000+"px"
+  // div4.style.left = 900+"px"
  
   // yAxisCar1 = 500;
   // yAxisCar2 =400;
