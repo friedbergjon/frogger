@@ -131,12 +131,12 @@ let xAxisCar3 = 1000;
 
 function moveCar(){
   // Mohammed's help on changing the format of this function to represent current values of car rather than initial, for "if car coord === frog coord" collision function
-  // div2.style.transform = `translateX(${xAxisCar1}px)`;
-  // div3.style.transform = `translateX(${xAxisCar2}px)`;
-  // div4.style.transform = `translateX(${xAxisCar3}px)`;
-  div2.style.left = (parseFloat(div2.style.left) - 10)+"px"
+  div2.style.transform = `translateX(${xAxisCar1}px)`;
+  div3.style.transform = `translateX(${xAxisCar2}px)`;
+  div4.style.transform = `translateX(${xAxisCar3}px)`;
+  div2.style.left = (parseFloat(div2.style.left) - 5)+"px"
   div3.style.left = (parseFloat(div2.style.left) - 5)+"px"
-  div4.style.left = (parseFloat(div2.style.left) - 10)+"px"
+  div4.style.left = (parseFloat(div2.style.left) - 5)+"px"
   
   
 }
@@ -147,9 +147,9 @@ function moveCar(){
 ///Mohammed helped with getting the cars to loop//
 
 setInterval(()=>{
-  xAxisCar1-= 8;
-  xAxisCar2-=10;
-  xAxisCar3-=5;
+  xAxisCar1-= .8;
+  xAxisCar2-=.50;
+  xAxisCar3-=.1;
   
  
   moveCar();
@@ -157,18 +157,18 @@ setInterval(()=>{
 },10)
  
 setInterval(()=>{
-  // xAxisCar1 = 900;
-  // xAxisCar2 = 1000;
-  // xAxisCar3 = 800;
+  xAxisCar1 = 900;
+  xAxisCar2 = 1000;
+  xAxisCar3 = 800;
   div2.style.left = 900+"px"
   div3.style.left = 1000+"px"
-  div4.style.left = 800+"px"
+  div4.style.left = 900+"px"
  
   // yAxisCar1 = 500;
   // yAxisCar2 =400;
   // yAxisCar3 =300;
   moveCar();
-},3000)
+},5000)
 
 // collision detection
 
