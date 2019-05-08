@@ -1,18 +1,16 @@
 
-window.onload = function() {
 
   const body = document.body;
   
-  const isCoordinateInGrid = (x, y) => {
-    return !(x < 0 || y < 0 || x > window.length || y > window.length);
-}
-
+  
 let div = document.createElement('div');
   div.className ='frog';
   body.appendChild(div);
      div.style.left = (0.5 * window.innerWidth) + "px";
      div.style.top = (0.7 * window.innerHeight) + "px";
+     moveSelection()
 
+     canMoveTo()
 
 let div2 = document.createElement('div');
 div2.className = 'car';
@@ -43,7 +41,12 @@ function moveCar(){
   div3.style.transform = `translateX(${x1Axis}px)`;
   div4.style.transform = `translateX(${x2Axis}px)`;
 }
-  const canMoveTo = (x, y) => {
+ 
+const isCoordinateInGrid = (x, y) => {
+  return !(x < 0 || y < 0 || x > window.innerWidth + "px" || y > window.innerHeight + "px");
+
+}
+const canMoveTo = (x, y) => {
     if (!isCoordinateInGrid(x, y)) {
          return false;
      }
@@ -80,7 +83,10 @@ function moveCar(){
  
  document.body.addEventListener('keydown', evt => {
      const keyCode = evt.keyCode;
- 
+
+     frog.moving = true;
+     keysDown[e.keyCode] = true;
+    //  https://codepen.io/JTParrett/pen/vgwHA
      if ([37, 38, 39, 40].includes(keyCode)) {
          evt.preventDefault();
      }
@@ -120,10 +126,8 @@ setInterval(()=>{
 },5000)
 
 
-moveSelection()
 
-canMoveTo()
-}
+
 // function carLoop() {
 //   for (i=0; i<= div.length; i++){
 // setInterval(function() {
