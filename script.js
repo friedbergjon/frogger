@@ -1,46 +1,11 @@
 
-function leftArrowPressed() {
-  
-  div.style.left = parseInt(div.style.left) - 5 + 'px';
-  }
-
-  function rightArrowPressed() {
-  
-  div.style.left = parseInt(div.style.left) + 5 + 'px';
-
-  }
-
-  function upArrowPressed() {
-  
-  div.style.top = parseInt(div.style.top) - 5 + 'px';
-  }
-
-  function downArrowPressed() {
-  
-  div.style.top = parseInt(div.style.top) + 5 + 'px';
-  }
-
-  function moveSelection(evt) {
-      switch (evt.keyCode) {
-          case 37:
-          leftArrowPressed();
-          break;
-          case 39:
-          rightArrowPressed();
-          break;
-          case 38:
-          upArrowPressed();
-          break;
-          case 40:
-          downArrowPressed();
-          break;
-          }
-      };
-
 window.onload = function() {
 
   const body = document.body;
-
+  
+  const isCoordinateInGrid = (x, y) => {
+    return !(x < 0 || y < 0 || x > window.length || y > window.length);
+}
 
 let div = document.createElement('div');
   div.className ='frog';
@@ -77,8 +42,64 @@ function moveCar(){
   div2.style.transform = `translateX(${xAxis}px)`;
   div3.style.transform = `translateX(${x1Axis}px)`;
   div4.style.transform = `translateX(${x2Axis}px)`;
-
 }
+  const canMoveTo = (x, y) => {
+    if (!isCoordinateInGrid(x, y)) {
+         return false;
+     }
+     return true;
+ }
+ 
+ const moveRight = () => {
+     if (canMoveTo(frog.x + 1, frog.y)) {
+         frog.x += 1;
+         moveCharacterTo();
+     }
+ }
+ 
+ const moveLeft = () => {
+     if (canMoveTo(frog.x - 1, frog.y)) {
+         frog.x -= 1;
+         moveCharacterTo();
+     }
+ }
+ 
+ const moveDown = () => {
+     if (canMoveTo(frog.x , frog.y + 1)) {
+         frog.y += 1;
+         moveCharacterTo();
+     }
+ }
+ 
+ const moveUp = () => {
+     if (canMoveTo(frog.x , frog.y - 1)) {
+         frog.y -= 1;
+         moveCharacterTo();
+     }
+ }
+ 
+ document.body.addEventListener('keydown', evt => {
+     const keyCode = evt.keyCode;
+ 
+     if ([37, 38, 39, 40].includes(keyCode)) {
+         evt.preventDefault();
+     }
+     switch (keyCode) {
+         case 37:
+         moveLeft();
+         break;
+       case 38:
+         moveUp();
+         break;
+       case 39:
+         moveRight();
+         break;
+       case 40:
+         moveDown();
+         break;
+     }
+ })
+
 
 
 //moveCar();
@@ -100,6 +121,8 @@ setInterval(()=>{
 
 
 moveSelection()
+
+canMoveTo()
 }
 // function carLoop() {
 //   for (i=0; i<= div.length; i++){
@@ -110,7 +133,7 @@ moveSelection()
 
 // setInterval(function() {
 //   div3.style.transform = "translateX(-1100px)";
-// }, 4000);
+// }, 4000);}
 // }
 //     div3.style.transform = "translateX(-1100px)";
 //     div2.style.transform = "translateX(-1100px)";
