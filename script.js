@@ -1,3 +1,42 @@
+
+function leftArrowPressed() {
+  
+  div.style.left = parseInt(div.style.left) - 5 + 'px';
+  }
+
+  function rightArrowPressed() {
+  
+  div.style.left = parseInt(div.style.left) + 5 + 'px';
+
+  }
+
+  function upArrowPressed() {
+  
+  div.style.top = parseInt(div.style.top) - 5 + 'px';
+  }
+
+  function downArrowPressed() {
+  
+  div.style.top = parseInt(div.style.top) + 5 + 'px';
+  }
+
+  function moveSelection(evt) {
+      switch (evt.keyCode) {
+          case 37:
+          leftArrowPressed();
+          break;
+          case 39:
+          rightArrowPressed();
+          break;
+          case 38:
+          upArrowPressed();
+          break;
+          case 40:
+          downArrowPressed();
+          break;
+          }
+      };
+
 window.onload = function() {
 
   const body = document.body;
@@ -43,7 +82,7 @@ function moveCar(){
 
 
 //moveCar();
-
+///Mohammed helped with getting the cars to loop//
 
 setInterval(()=>{
   x2Axis-= 8;
@@ -59,8 +98,9 @@ setInterval(()=>{
   moveCar();
 },5000)
 
-}
 
+moveSelection()
+}
 // function carLoop() {
 //   for (i=0; i<= div.length; i++){
 // setInterval(function() {
