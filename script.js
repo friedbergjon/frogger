@@ -3,14 +3,12 @@
   const body = document.body;
   
   
-let div = document.createElement('div');
-  div.className ='frog';
-  body.appendChild(div);
-     div.style.left = (0.5 * window.innerWidth) + "px";
-     div.style.top = (0.7 * window.innerHeight) + "px";
-     moveSelection()
-
-     canMoveTo()
+let frog = document.createElement('div');
+  frog.className ='frog';
+  body.appendChild(frog);
+     frog.style.left = (0.5 * window.innerWidth) + "px";
+     frog.style.top = (0.7 * window.innerHeight) + "px";
+    
 
 let div2 = document.createElement('div');
 div2.className = 'car';
@@ -41,11 +39,15 @@ function moveCar(){
   div3.style.transform = `translateX(${x1Axis}px)`;
   div4.style.transform = `translateX(${x2Axis}px)`;
 }
- 
+
+//blerf code for keyboard movement, went over in class//
+const frogPosition = {x: 0, y: 0}
+
 const isCoordinateInGrid = (x, y) => {
   return !(x < 0 || y < 0 || x > window.innerWidth + "px" || y > window.innerHeight + "px");
 
 }
+
 const canMoveTo = (x, y) => {
     if (!isCoordinateInGrid(x, y)) {
          return false;
@@ -54,39 +56,36 @@ const canMoveTo = (x, y) => {
  }
  
  const moveRight = () => {
-     if (canMoveTo(frog.x + 1, frog.y)) {
-         frog.x += 1;
+     if (canMoveTo(frogPosition.x + 1, frogPosition.y)) {
+         frogPosition.x += 1;
          moveCharacterTo();
      }
  }
  
  const moveLeft = () => {
-     if (canMoveTo(frog.x - 1, frog.y)) {
-         frog.x -= 1;
+     if (canMoveTo(frogPosition.x - 1, frogPosition.y)) {
+         frogPosition.x -= 1;
          moveCharacterTo();
      }
  }
  
  const moveDown = () => {
-     if (canMoveTo(frog.x , frog.y + 1)) {
-         frog.y += 1;
+     if (canMoveTo(frogPosition.x , frogPosition.y + 1)) {
+         frogPosition.y += 1;
          moveCharacterTo();
      }
  }
  
  const moveUp = () => {
-     if (canMoveTo(frog.x , frog.y - 1)) {
-         frog.y -= 1;
+     if (canMoveTo(frogPosition.x , frogPosition.y - 1)) {
+         frogPosition.y -= 1;
          moveCharacterTo();
      }
  }
  
  document.body.addEventListener('keydown', evt => {
      const keyCode = evt.keyCode;
-
-     frog.moving = true;
-     keysDown[e.keyCode] = true;
-    //  https://codepen.io/JTParrett/pen/vgwHA
+  
      if ([37, 38, 39, 40].includes(keyCode)) {
          evt.preventDefault();
      }
@@ -105,10 +104,13 @@ const canMoveTo = (x, y) => {
          break;
      }
  })
+ const moveCharacterTo = (x, y) => {
+  const charElement = document.querySelector('.frog');
+  charElement.style.left = `${(frogPosition.x * 100)}px`;
+  charElement.style.top = `${(frogPosition.y * 100)}px`;
+ }
 
-
-
-//moveCar();
+ 
 ///Mohammed helped with getting the cars to loop//
 
 setInterval(()=>{
@@ -128,22 +130,3 @@ setInterval(()=>{
 
 
 
-// function carLoop() {
-//   for (i=0; i<= div.length; i++){
-// setInterval(function() {
-//     div2.style.transform = "translateX(-1100px)";
-// }, 4000);
-
-
-// setInterval(function() {
-//   div3.style.transform = "translateX(-1100px)";
-// }, 4000);}
-// }
-//     div3.style.transform = "translateX(-1100px)";
-//     div2.style.transform = "translateX(-1100px)";
-
-
-
-// }
-// setInterval(carLoop, 1000)
-// }
