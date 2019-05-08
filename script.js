@@ -47,22 +47,16 @@ div4.style.top = (div4Position.y * 100) + "px";
 // https://stackoverflow.com/questions/294250/how-do-i-retrieve-an-html-elements-actual-width-and-height
 let frogHeight = frog.offsetHeight;
 let frogWidth = frog.offsetWidth;
-let div2Width = div2.offsetWidth;
-let div2Height = div2.offsetHeight;
-let div3Width = div3.offsetWidth;
-let div3Height = div3.offsetHeight;
-let div4Width = div4.offsetWidth;
-let div4Height = div4.offsetHeight;
+let carWidth = div2.offsetWidth;
+let carHeight = div2.offsetHeight;
+
 
 //  collision code :
 // //  https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection
 
-if(frog.style.top > div2.style.top && frog.style.top < div2.style.top +div2Height && frog.style.left > div2.style.left && frog.style.left < div2.style.left + div2Width) {
-console.log("hello world")}
-if(frog.style.top > div3.style.top && frog.style.top < div3.style.top +div3Height && frog.style.left > div3.style.left && frog.style.left < div3.style.left + div3Width) {
-  console.log("hello world")}
-  if(frog.style.top > div4.style.top && frog.style.top < div4.style.top +div4Height && frog.style.left > div4.style.left && frog.style.left < div4.style.left + div4Width) {
-    console.log("hello world")}
+if (frog.x > div2.x && frog.x < div2.x + carWidth || frog.y > div2.y && frog.y < div2.y + carHeight){
+  console.log("did it")
+}
 
 // //blerf code for keyboard movement, went over in class//
 
