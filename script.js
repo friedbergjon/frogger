@@ -54,13 +54,29 @@ let carHeight = car1.offsetHeight;
 
 //  collision code :
 // // //  https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection
-// function collisionY() {
-// return ((frogPosition.y > car1Position.y -.5 && frogPosition.y < car1Position.y -.5 + (carHeight/100)))
-// }
-// function collisionX() {
-//   return (frogPosition.x > car1Position.x && frogPosition.x < car1Position.x + (carWidth/100))
+function collisionY1() {
+return ((frogPosition.y > car1Position.y -.5 && frogPosition.y < car1Position.y -.5 + (carHeight/100)))
+}
+function collisionX1() {
+  return (frogPosition.x > car1Position.x && frogPosition.x < car1Position.x + (carWidth/100))
 
-// }
+}
+
+function collisionY2() {
+  return ((frogPosition.y > car2Position.y -.5 && frogPosition.y < car2Position.y -.5 + (carHeight/100)))
+  }
+  function collisionX2() {
+    return (frogPosition.x > car2Position.x && frogPosition.x < car2Position.x + (carWidth/100))
+  
+  }
+
+  function collisionY3() {
+    return ((frogPosition.y > car3Position.y -.5 && frogPosition.y < car3Position.y -.5 + (carHeight/100)))
+    }
+    function collisionX3() {
+      return (frogPosition.x > car3Position.x && frogPosition.x < car3Position.x + (carWidth/100))
+    
+    }
 
 
   function winRound() {
@@ -98,9 +114,7 @@ const canMoveTo = (x, y) => {
      if (canMoveTo(frogPosition.x - .5, frogPosition.y)) {
          frogPosition.x -= .5;
          frog.setAttribute('style','transform:rotate(270deg)');
-        
-        
-         
+             
          moveCharacterTo();
      }
      }
@@ -109,7 +123,7 @@ const canMoveTo = (x, y) => {
  const moveDown = () => {
      if (canMoveTo(frogPosition.x , frogPosition.y + .5)) {
          frogPosition.y += .5;
-         frog.setAttribute('style','transform:rotate(180deg)');
+         frog.setAttribute('style','transform:rotate(580deg)');
          moveCharacterTo();
      }
  }
@@ -159,35 +173,41 @@ const canMoveTo = (x, y) => {
 let makeCar1Drive = (x,y) => {
  
   let car1 = document.querySelector('.car');
-   car1Position.x -= .5
+   car1Position.x -= .1
    car1.style.left = `${(car1Position.x * 100)}px`;
    car1.style.top = `${(car1Position.y * 100)}px`;
-
+   if(collisionX1()  && collisionY1()) {
+    console.log("frog officially")
+  }
 }
   
 
 let makeCar2Drive = (x,y) => {
     let car2 = document.querySelector('.car');
-    car2Position.x -= .5
+    car2Position.x -= .1
     car2.style.left = `${(car2Position.x * 100)}px`;
     car2.style.top = `${(car2Position.y * 100)}px`;
-   
+    if(collisionX2()  && collisionY2()) {
+      console.log("frog officially")
+    }
 }
 
  
 let makeCar3Drive = (x,y) => {    
     let car3 = document.querySelector('.car');
-    car3Position.x -= .5
+    car3Position.x -= .1
     car3.style.left = `${(car3Position.x * 100)}px`;
     car3.style.top = `${(car3Position.y * 100)}px`;
+    if(collisionX3()  && collisionY3()) {
+      console.log("frog officially")
+    }
+    
   }
 
 setInterval(() => {
   makeCar1Drive();
-
-
-  
-}, 100);
+ 
+}, 10);
 
 
 setInterval(() => {
@@ -195,17 +215,21 @@ setInterval(() => {
 
  
   
-}, 200);
+}, 20);
 
 
 setInterval(() => {
   makeCar3Drive();
 
- 
+}, 15);
+
+
+
+setInterval(()=>{
+ makeCar1Drive(); 
+ makeCar2Drive();
+ makeCar3Drive();
   
-}, 150);
-
-
-
+},5000);
 
 
