@@ -5,6 +5,7 @@ let frogPosition = {x: 7, y: 6}
 let div2Position = {x:8, y:3.5}
 let div3Position = {x:8, y:1.3}
 let div4Position = {x:8, y:5.6}
+let winPosition =  {x:9, y:.5}
  
 // function deadFrog() {
   
@@ -42,6 +43,12 @@ body.appendChild(div4);
 div4.style.left = (div4Position.x * 100) + "px";
 div4.style.top = (div4Position.y * 100) + "px";
 
+let win = document.createElement('div');
+win.className = 'car';
+body.appendChild(div2);
+win.style.left = (winPosition.x * 100) + "px";
+win.style.top = (winPosition.y * 100) + "px";
+
 
 //code to attain height of frog for collision detection//
 // https://stackoverflow.com/questions/294250/how-do-i-retrieve-an-html-elements-actual-width-and-height
@@ -52,12 +59,22 @@ let carHeight = div2.offsetHeight;
 
 
 //  collision code :
-// //  https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection
-function collision() {
-if ((frogPosition.x > div2Position.x && frogPosition.x < div2Position.x + (carWidth/100)) || frogPosition.y > div2Position.y && frogPosition.y < div2Position.y + (carHeight/100)){
-  console.log("frog dead")
-}}
+// // //  https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection
+// function collisionY() {
+// if (frogPosition.y > div2Position.y -.5 && frogPosition.y < div2Position.y -.5 + (carHeight/100)){
+//   console.log("frog dead")
+// }}
+function collisionX() {
+  if (frogPosition.x > `${xAxisCar1}` && frogPosition.x < `${xAxisCar1}` +.5 + (carWidth/100)){
+  console.log("frog dead !!!!!!!!!!")
+}
+}
 
+
+  function winRound() {
+      if (frogPosition.y > winPosition.y -1 && frogPosition.y < winPosition.y -1 + (carHeight/100)){
+        console.log("you win!")
+      }}
 
 // //blerf code for keyboard movement, went over in class//
 
@@ -142,6 +159,11 @@ const canMoveTo = (x, y) => {
   charElement.style.left = `${(frogPosition.x * 100)}px`;
   charElement.style.top = `${(frogPosition.y * 100)}px`;
  }
+ const moveCarTo = (x, y) => {
+  const carMoving = document.querySelector('.car');
+  carMoving.style.left = `${(div2Position.x * 100)}px`;
+  carMoving.style.top = `${(div2Position.y * 100)}px`;
+ }
 
 
 let xAxisCar1 = 800;
@@ -158,7 +180,7 @@ function moveCar(){
   // div3.style.left = (parseFloat(div2.style.left) - 5)+"px"
   // div4.style.left = (parseFloat(div2.style.left) - 10)+"px"
   
-  
+ 
 }
 // Mohammed's help on random function
 // function randomFunction(range){
@@ -171,11 +193,12 @@ setInterval(()=>{
   xAxisCar2-=9;
   xAxisCar3-=7;
   
- 
+  // collisionY();
+  collisionX()
   moveCar();
-  collision();
+  winRound();
 },10)
- 
+
 setInterval(()=>{
   xAxisCar1 = 800;
   xAxisCar2 = 800;
