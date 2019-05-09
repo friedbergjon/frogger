@@ -55,13 +55,11 @@ let carHeight = div2.offsetHeight;
 //  collision code :
 // // //  https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection
 function collisionY() {
-if (frogPosition.y > div2Position.y -.5 && frogPosition.y < div2Position.y -.5 + (carHeight/100)){
-  console.log("frog dead")
-}}
-function collisionX() {
-  if (frogPosition.x > div2Position.x && frogPosition.x < div2Position.x + (carWidth/100)){
-  console.log("frog dead !!!!!!!!!!")
+return (frogPosition.y > div2Position.y -.5 && frogPosition.y < div2Position.y -.5 + (carHeight/100)) 
 }
+function collisionX() {
+  return (frogPosition.x > div2Position.x && frogPosition.x < div2Position.x + (carWidth/100))
+
 }
 
 
@@ -167,8 +165,10 @@ const makeCardDrive = (x,y) => {
 
 setInterval(() => {
   makeCardDrive()
-  collisionX()
-  collisionY()
+  if(collisionX()  && collisionY()) {
+    console.log("frog officially")
+  }
+  
 }, 250);
 
 
