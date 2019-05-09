@@ -60,10 +60,10 @@ let carHeight = div2.offsetHeight;
 
 //  collision code :
 // // //  https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection
-// function collisionY() {
-// if (frogPosition.y > div2Position.y -.5 && frogPosition.y < div2Position.y -.5 + (carHeight/100)){
-//   console.log("frog dead")
-// }}
+function collisionY() {
+if (frogPosition.y > div2Position.y -.5 && frogPosition.y < div2Position.y -.5 + (carHeight/100)){
+  console.log("frog dead")
+}}
 function collisionX() {
   if (frogPosition.x > `${xAxisCar1}` && frogPosition.x < `${xAxisCar1}` +.5 + (carWidth/100)){
   console.log("frog dead !!!!!!!!!!")
@@ -73,7 +73,7 @@ function collisionX() {
 
   function winRound() {
       if (frogPosition.y > winPosition.y -1 && frogPosition.y < winPosition.y -1 + (carHeight/100)){
-        console.log("you win!")
+        alert("You Win!");
       }}
 
 // //blerf code for keyboard movement, went over in class//
@@ -106,9 +106,7 @@ const canMoveTo = (x, y) => {
          frogPosition.x -= .5;
          //help from Michael//
       
-         //if frog coordinates equal car coordinates//
-        //  if (frogPosition.x === div2Position.x ||frogPosition.x === div3Position.x ||frogPosition.x === div4Position.x){
-        //    alert(frog dead!)
+        
          
          moveCharacterTo();
      }
@@ -158,11 +156,15 @@ const canMoveTo = (x, y) => {
   const charElement = document.querySelector('.frog');
   charElement.style.left = `${(frogPosition.x * 100)}px`;
   charElement.style.top = `${(frogPosition.y * 100)}px`;
+  winRound();
+  
+  // collisionX();
  }
  const moveCarTo = (x, y) => {
   const carMoving = document.querySelector('.car');
   carMoving.style.left = `${(div2Position.x * 100)}px`;
   carMoving.style.top = `${(div2Position.y * 100)}px`;
+
  }
 
 
@@ -193,10 +195,9 @@ setInterval(()=>{
   xAxisCar2-=9;
   xAxisCar3-=7;
   
-  // collisionY();
-  collisionX()
+  collisionY();
   moveCar();
-  winRound();
+  
 },10)
 
 setInterval(()=>{
@@ -206,7 +207,7 @@ setInterval(()=>{
   // div2.style.left = 900+"px"
   // div3.style.left = 1000+"px"
   // div4.style.left = 900+"px"
- 
+
   // yAxisCar1 = 500;
   // yAxisCar2 =400;
   // yAxisCar3 =300;
