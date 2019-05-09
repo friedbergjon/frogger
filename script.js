@@ -173,7 +173,7 @@ const canMoveTo = (x, y) => {
 let makeCar1Drive = (x,y) => {
  
   let car1 = document.querySelector('.car');
-   car1Position.x -= .1
+   car1Position.x -= .05
    car1.style.left = `${(car1Position.x * 100)}px`;
    car1.style.top = `${(car1Position.y * 100)}px`;
    if(collisionX1()  && collisionY1()) {
@@ -184,7 +184,7 @@ let makeCar1Drive = (x,y) => {
 
 let makeCar2Drive = (x,y) => {
     let car2 = document.querySelector('.car');
-    car2Position.x -= .1
+    car2Position.x -= .05
     car2.style.left = `${(car2Position.x * 100)}px`;
     car2.style.top = `${(car2Position.y * 100)}px`;
     if(collisionX2()  && collisionY2()) {
@@ -195,7 +195,7 @@ let makeCar2Drive = (x,y) => {
  
 let makeCar3Drive = (x,y) => {    
     let car3 = document.querySelector('.car');
-    car3Position.x -= .1
+    car3Position.x -= .05
     car3.style.left = `${(car3Position.x * 100)}px`;
     car3.style.top = `${(car3Position.y * 100)}px`;
     if(collisionX3()  && collisionY3()) {
@@ -226,10 +226,15 @@ setInterval(() => {
 
 
 setInterval(()=>{
+
+car1Position = {x:16, y:3.5}
+car2Position = {x:16, y:1.5}
+car3Position = {x:16, y:5}
+  
  makeCar1Drive(); 
  makeCar2Drive();
  makeCar3Drive();
   
-},5000);
+},10000);
 
 
