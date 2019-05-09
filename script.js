@@ -2,9 +2,9 @@
 
   const body = document.body;
 let frogPosition = {x: 7, y: 6}
-let car1Position = {x:16, y:3.5}
-let car2Position = {x:16, y:1.5}
-let car3Position = {x:16, y:5}
+let car1Position = {x:16, y:3}
+let car2Position = {x:16, y:1}
+let car3Position = {x:16, y:5.5}
 let winPosition =  {x:16, y:.5}
  
 
@@ -26,13 +26,13 @@ car1.style.top = (car1Position.y * 100) + "px";
 
 
 let car2 = document.createElement('div');
-car2.className = 'car';
+car2.className = 'bus';
 body.appendChild(car2);
 car2.style.left = (car2Position.x * 100) + "px";
 car2.style.top = (car2Position.y * 100) + "px";
 
 let car3 = document.createElement('div');
-car3.className = 'car';
+car3.className = 'carBlue';
 body.appendChild(car3);
 car3.style.left = (car3Position.x * 100) + "px";
 car3.style.top = (car3Position.y * 100) + "px";
@@ -123,7 +123,7 @@ const canMoveTo = (x, y) => {
  const moveDown = () => {
      if (canMoveTo(frogPosition.x , frogPosition.y + .5)) {
          frogPosition.y += .5;
-         frog.setAttribute('style','transform:rotate(580deg)');
+         frog.setAttribute('style','transform:rotate(180deg)');
          moveCharacterTo();
      }
  }
@@ -164,8 +164,7 @@ const canMoveTo = (x, y) => {
   charElement.style.left = `${(frogPosition.x * 100)}px`;
   charElement.style.top = `${(frogPosition.y * 100)}px`;
   winRound();
-  // collisionY();
-  // collisionX();
+  
  }
  
 
@@ -177,36 +176,40 @@ let makeCar1Drive = (x,y) => {
    car1.style.left = `${(car1Position.x * 100)}px`;
    car1.style.top = `${(car1Position.y * 100)}px`;
    if(collisionX1()  && collisionY1()) {
-    console.log("frog officially")
+    alert("frogger died!");
+    window.location.reload();
   }
 }
   
 
 let makeCar2Drive = (x,y) => {
-    let car2 = document.querySelector('.car');
+    let car2 = document.querySelector('.bus');
     car2Position.x -= .05
     car2.style.left = `${(car2Position.x * 100)}px`;
     car2.style.top = `${(car2Position.y * 100)}px`;
     if(collisionX2()  && collisionY2()) {
-      console.log("frog officially")
+      alert("frogger died!");
+      window.location.reload();
     }
 }
 
  
 let makeCar3Drive = (x,y) => {    
-    let car3 = document.querySelector('.car');
+    let car3 = document.querySelector('.carBlue');
     car3Position.x -= .05
     car3.style.left = `${(car3Position.x * 100)}px`;
     car3.style.top = `${(car3Position.y * 100)}px`;
     if(collisionX3()  && collisionY3()) {
-      console.log("frog officially")
+      alert("frogger died!");
+      window.location.reload();
+      //https://stackoverflow.com/questions/16955019/how-to-reload-a-page-after-the-ok-click-on-the-alert-page
     }
     
   }
 
 setInterval(() => {
   makeCar1Drive();
- 
+
 }, 10);
 
 
@@ -227,14 +230,14 @@ setInterval(() => {
 
 setInterval(()=>{
 
-car1Position = {x:16, y:3.5}
-car2Position = {x:16, y:1.5}
-car3Position = {x:16, y:5}
+car1Position = {x:16, y:3}
+car2Position = {x:16, y:1}
+car3Position = {x:16, y:5.5}
   
  makeCar1Drive(); 
  makeCar2Drive();
  makeCar3Drive();
-  
-},10000);
+ 
+},7500);
 
 
