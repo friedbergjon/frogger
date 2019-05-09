@@ -7,13 +7,7 @@ let div3Position = {x:8, y:1.3}
 let div4Position = {x:8, y:5.6}
 let winPosition =  {x:9, y:.5}
  
-// function deadFrog() {
-  
-// }
-// function collision() {
 
-
-// }
 
 let frog = document.createElement('div');
   frog.className ='frog';
@@ -60,12 +54,12 @@ let carHeight = div2.offsetHeight;
 
 //  collision code :
 // // //  https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection
-function collisionY() {
-if (frogPosition.y > div2Position.y -.5 && frogPosition.y < div2Position.y -.5 + (carHeight/100)){
-  console.log("frog dead")
-}}
+// function collisionY() {
+// if (frogPosition.y > div2Position.y -.5 && frogPosition.y < div2Position.y -.5 + (carHeight/100)){
+//   console.log("frog dead")
+// }}
 function collisionX() {
-  if (frogPosition.x > `${xAxisCar1}` && frogPosition.x < `${xAxisCar1}` +.5 + (carWidth/100)){
+  if (frogPosition.x > div2Position.x +.3  && frogPosition.x < div2Position.x +.3  + (carWidth/100)){
   console.log("frog dead !!!!!!!!!!")
 }
 }
@@ -104,7 +98,7 @@ const canMoveTo = (x, y) => {
  const moveLeft = () => {
      if (canMoveTo(frogPosition.x - .5, frogPosition.y)) {
          frogPosition.x -= .5;
-         //help from Michael//
+        
       
         
          
@@ -157,8 +151,8 @@ const canMoveTo = (x, y) => {
   charElement.style.left = `${(frogPosition.x * 100)}px`;
   charElement.style.top = `${(frogPosition.y * 100)}px`;
   winRound();
-  
-  // collisionX();
+  // collisionY();
+  collisionX();
  }
  const moveCarTo = (x, y) => {
   const carMoving = document.querySelector('.car');
@@ -174,7 +168,7 @@ let xAxisCar3 = 1000;
 
 
 function moveCar(){
-  // Mohammed's help on changing the format of this function to represent current values of car rather than initial, for "if car coord === frog coord" collision function
+  // Mohammed's help of using the transform to move cars
   div2.style.transform = `translateX(${xAxisCar1}px)`;
   div3.style.transform = `translateX(${xAxisCar2}px)`;
   div4.style.transform = `translateX(${xAxisCar3}px)`;
@@ -195,7 +189,7 @@ setInterval(()=>{
   xAxisCar2-=9;
   xAxisCar3-=7;
   
-  collisionY();
+  
   moveCar();
   
 },10)
