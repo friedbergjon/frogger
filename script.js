@@ -2,7 +2,7 @@
 
   const body = document.body;
 let frogPosition = {x: 7, y: 6}
-let div2Position = {x:8, y:3.5}
+let div2Position = {x:16, y:3.5}
 let div3Position = {x:8, y:1.3}
 let div4Position = {x:8, y:5.6}
 let winPosition =  {x:9, y:.5}
@@ -54,15 +54,15 @@ let carHeight = div2.offsetHeight;
 
 //  collision code :
 // // //  https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection
-// function collisionY() {
-// if (frogPosition.y > div2Position.y -.5 && frogPosition.y < div2Position.y -.5 + (carHeight/100)){
-//   console.log("frog dead")
-// }}
-// function collisionX() {
-//   if (frogPosition.x > div2Position.x && frogPosition.x < div2Position.x + (carWidth/100)){
-//   console.log("frog dead !!!!!!!!!!")
-// }
-// }
+function collisionY() {
+if (frogPosition.y > div2Position.y -.5 && frogPosition.y < div2Position.y -.5 + (carHeight/100)){
+  console.log("frog dead")
+}}
+function collisionX() {
+  if (frogPosition.x > div2Position.x && frogPosition.x < div2Position.x + (carWidth/100)){
+  console.log("frog dead !!!!!!!!!!")
+}
+}
 
 
   function winRound() {
@@ -157,16 +157,22 @@ const canMoveTo = (x, y) => {
  
 
  
-function makeCardDrive(x,y) {
- setInterval(() => {
+const makeCardDrive = (x,y) => {
+ 
+  const car1 = document.querySelector('.car');
    div2Position.x -= .5
-   div2.style.left = `${(div2Position.x * 100)}px`;
-div2.style.top = `${(div2Position.y * 100)}px`;
+   car1.style.left = `${(div2Position.x * 100)}px`;
+   car1.style.top = `${(div2Position.y * 100)}px`;
+  }
+
+setInterval(() => {
+  makeCardDrive()
+  collisionX()
+  collisionY()
 }, 250);
 
-console.log("hello")
-}
-makeCardDrive()
+
+
 
 // let xAxisCar1 = 800;
 // let xAxisCar2 = 800;
