@@ -50,7 +50,8 @@ let frogHeight = frog.offsetHeight;
 let frogWidth = frog.offsetWidth;
 let carWidth = car1.offsetWidth;
 let carHeight = car1.offsetHeight;
-
+let busHeight = car2.offsetHeight;
+let busWidth = car2.offsetWidth;
 
 //  collision code :
 // // //  https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection
@@ -63,10 +64,10 @@ function collisionX1() {
 }
 
 function collisionY2() {
-  return ((frogPosition.y > car2Position.y -.5 && frogPosition.y < car2Position.y -.5 + (carHeight/100)))
+  return ((frogPosition.y > car2Position.y -.5 && frogPosition.y < car2Position.y -.5 + (busHeight/100)))
   }
   function collisionX2() {
-    return (frogPosition.x > car2Position.x && frogPosition.x < car2Position.x + (carWidth/100))
+    return (frogPosition.x > car2Position.x && frogPosition.x < car2Position.x + (busWidth/100))
   
   }
 
