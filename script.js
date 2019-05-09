@@ -53,10 +53,11 @@ let carHeight = div2.offsetHeight;
 
 //  collision code :
 // //  https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection
+function collision() {
+if ((frogPosition.x > div2Position.x && frogPosition.x < div2Position.x + (carWidth/100)) || frogPosition.y > div2Position.y && frogPosition.y < div2Position.y + (carHeight/100)){
+  console.log("frog dead")
+}}
 
-if (frog.x > div2.x && frog.x < div2.x + carWidth || frog.y > div2.y && frog.y < div2.y + carHeight){
-  console.log("did it")
-}
 
 // //blerf code for keyboard movement, went over in class//
 
@@ -172,7 +173,7 @@ setInterval(()=>{
   
  
   moveCar();
-
+  collision();
 },10)
  
 setInterval(()=>{
