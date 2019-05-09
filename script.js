@@ -58,11 +58,11 @@ let carHeight = div2.offsetHeight;
 // if (frogPosition.y > div2Position.y -.5 && frogPosition.y < div2Position.y -.5 + (carHeight/100)){
 //   console.log("frog dead")
 // }}
-function collisionX() {
-  if (frogPosition.x > div2Position.x +.3  && frogPosition.x < div2Position.x +.3  + (carWidth/100)){
-  console.log("frog dead !!!!!!!!!!")
-}
-}
+// function collisionX() {
+//   if (frogPosition.x > div2Position.x && frogPosition.x < div2Position.x + (carWidth/100)){
+//   console.log("frog dead !!!!!!!!!!")
+// }
+// }
 
 
   function winRound() {
@@ -152,61 +152,67 @@ const canMoveTo = (x, y) => {
   charElement.style.top = `${(frogPosition.y * 100)}px`;
   winRound();
   // collisionY();
-  collisionX();
+  // collisionX();
  }
- const moveCarTo = (x, y) => {
-  const carMoving = document.querySelector('.car');
-  carMoving.style.left = `${(div2Position.x * 100)}px`;
-  carMoving.style.top = `${(div2Position.y * 100)}px`;
+ 
 
- }
+ 
+function makeCardDrive(x,y) {
+ setInterval(() => {
+   div2Position.x -= .5
+   div2.style.left = `${(div2Position.x * 100)}px`;
+div2.style.top = `${(div2Position.y * 100)}px`;
+}, 250);
+
+console.log("hello")
+}
+makeCardDrive()
+
+// let xAxisCar1 = 800;
+// let xAxisCar2 = 800;
+// let xAxisCar3 = 1000;
 
 
-let xAxisCar1 = 800;
-let xAxisCar2 = 800;
-let xAxisCar3 = 1000;
-
-
-function moveCar(){
-  // Mohammed's help of using the transform to move cars
-  div2.style.transform = `translateX(${xAxisCar1}px)`;
-  div3.style.transform = `translateX(${xAxisCar2}px)`;
-  div4.style.transform = `translateX(${xAxisCar3}px)`;
-  // div2.style.left = (parseFloat(div2.style.left) - 10)+"px"
-  // div3.style.left = (parseFloat(div2.style.left) - 5)+"px"
-  // div4.style.left = (parseFloat(div2.style.left) - 10)+"px"
+// function moveCar(){
+//   // Mohammed's help of using the transform to move cars
+//   div2.style.transform = `translateX(${xAxisCar1}px)`;
+//   div3.style.transform = `translateX(${xAxisCar2}px)`;
+//   div4.style.transform = `translateX(${xAxisCar3}px)`;
+//   // div2.style.left = (parseFloat(div2.style.left) - 10)+"px"
+//   // div3.style.left = (parseFloat(div2.style.left) - 5)+"px"
+//   // div4.style.left = (parseFloat(div2.style.left) - 10)+"px"
   
  
-}
+// }
 // Mohammed's help on random function
 // function randomFunction(range){
 //   return Math.floor(Math.random() * range ) 
 // }
 ///Mohammed helped with getting the cars to loop//
 
-setInterval(()=>{
-  xAxisCar1-= 4;
-  xAxisCar2-=9;
-  xAxisCar3-=7;
+// setInterval(()=>{
+//   xAxisCar1-= 4;
+//   xAxisCar2-=9;
+//   xAxisCar3-=7;
   
   
-  moveCar();
+//   moveCar();
   
-},10)
+// },10)
 
-setInterval(()=>{
-  xAxisCar1 = 800;
-  xAxisCar2 = 800;
-  xAxisCar3 = 800;
-  // div2.style.left = 900+"px"
-  // div3.style.left = 1000+"px"
-  // div4.style.left = 900+"px"
+// setInterval(()=>{
+//   xAxisCar1 = 800;
+//   xAxisCar2 = 800;
+//   xAxisCar3 = 800;
+//   // div2.style.left = 900+"px"
+//   // div3.style.left = 1000+"px"
+//   // div4.style.left = 900+"px"
 
-  // yAxisCar1 = 500;
-  // yAxisCar2 =400;
-  // yAxisCar3 =300;
-  moveCar();
-},5000)
+//   // yAxisCar1 = 500;
+//   // yAxisCar2 =400;
+//   // yAxisCar3 =300;
+//   moveCar();
+// },5000)
 
 // collision detection
 
