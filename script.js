@@ -177,8 +177,13 @@ let makeCar1Drive = (x,y) => {
    car1.style.left = `${(car1Position.x * 100)}px`;
    car1.style.top = `${(car1Position.y * 100)}px`;
    if(collisionX1()  && collisionY1()) {
+     clearInterval(car1interval)
     alert("frogger died!");
+    window.clearInterval(car1interval);
+    //https://mdn.beonex.com/en/DOM/window.clearInterval.html/
     window.location.reload();
+    
+    
   }
 }
   
@@ -189,7 +194,9 @@ let makeCar2Drive = (x,y) => {
     car2.style.left = `${(car2Position.x * 100)}px`;
     car2.style.top = `${(car2Position.y * 100)}px`;
     if(collisionX2()  && collisionY2()) {
+      clearInterval(car2interval);
       alert("frogger died!");
+      window.clearInterval(car2interval);
       window.location.reload();
     }
 }
@@ -201,32 +208,34 @@ let makeCar3Drive = (x,y) => {
     car3.style.left = `${(car3Position.x * 100)}px`;
     car3.style.top = `${(car3Position.y * 100)}px`;
     if(collisionX3()  && collisionY3()) {
+      clearInterval(car3interval);
       alert("frogger died!");
       window.location.reload();
       //https://stackoverflow.com/questions/16955019/how-to-reload-a-page-after-the-ok-click-on-the-alert-page
     }
     
   }
-
+ let car1interval =
 setInterval(() => {
   makeCar1Drive();
 
 }, 10);
 
-
+ //Help from Mohammed in structuring interval as variable//
+ let car2interval =
 setInterval(() => {
   makeCar2Drive();
 
  
   
 }, 20);
+ 
 
-
+let car3interval =
 setInterval(() => {
   makeCar3Drive();
 
 }, 15);
-
 
 
 setInterval(()=>{
