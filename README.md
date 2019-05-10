@@ -66,30 +66,53 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Collision between Frog and Car| H | 5hrs|  hrs |  hrs |
-| -Displaying grass outside of window view with continual level increase | H | 5hrs|  hrs |  hrs |
-| -Frog and car movement| H | 4hrs| hrs | hrs |
-| -Changing and displaying score| H | 3hrs| hrs | hrs |
+| Collision between Frog and Car| H | 5hrs|  10hrs |  2hrs |
+| -Displaying grass outside of window view with continual level increase | H | 5hrs|  N/Ahrs |  hrs |
+| -Frog and car movement| H | 4hrs| 10hrs | 2hrs |
+| -Changing and displaying score| H | 3hrs| NAhrs | NAhrs |
 
 
 ## Additional Libraries
  Use this section to list all supporting libraries and their role in the project. 
 
+
+
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
+Use this section to include a brief code snippet of functionality that you are proud of an a brief description 
 
-```
-function reverse(string) {
-	// here is the code to reverse a string of text
+//My first successful atempt at colision detection after Daniel's explanation
+function collisionY1() {
+return ((frogPosition.y > car1Position.y -.5 && frogPosition.y < car1Position.y -.5 + (carHeight/100)))
 }
-```
+function collisionX1() {
+  return (frogPosition.x > car1Position.x && frogPosition.x < car1Position.x + (carWidth/100))
 
+}
+
+// Below is where I called the collision detection function later in the program
+
+let makeCar1Drive = (x,y) => {
+ 
+  let car1 = document.querySelector('.car');
+   car1Position.x -= .05
+   car1.style.left = `${(car1Position.x * 100)}px`;
+   car1.style.top = `${(car1Position.y * 100)}px`;
+   if(collisionX1()  && collisionY1()) {
+     clearInterval(car1interval)
+    alert("frogger died!");
+    window.clearInterval(car1interval);
+    //https://mdn.beonex.com/en/DOM/window.clearInterval.html/
+    window.location.reload();
+    
+    
+  }
+}
 ## Change Log
  Use this section to document what changes were made and the reasoning behind those changes.  
 
 ## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolution.
+The code above shows the solution I have after having mixed javascript code with CSS stying code. The frog was running off of Javascript and the cars were running off of CSS methods. Pixels were completely off until I defined the car's changing position in the same function that I translated it from CSS to Javascript.
 
 #### SAMPLE.....
 **ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
