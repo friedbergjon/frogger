@@ -83,7 +83,7 @@ function collisionY2() {
   function winRound() {
       if (frogPosition.y > winPosition.y -1 && frogPosition.y < winPosition.y -1 + (carHeight/100)){
         alert("You Win!");
-        window.location.reload();
+        window.location.href='/index2.html';
       }}
 
 // //blerf code for keyboard movement, went over in class//
@@ -249,6 +249,6 @@ car3Position = {x:16, y:5.5}
  makeCar2Drive();
  makeCar3Drive();
  
-},5000);
+},6000);
 
 
