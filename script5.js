@@ -82,8 +82,8 @@
   
     function winRound() {
         if (frogPosition.y > winPosition.y -1 && frogPosition.y < winPosition.y -1 + (carHeight/100)){
-          alert("You Win!");
-          window.location.reload();
+          alert("You Won The Game!!!! You're Amazing!!!");
+          window.location.href='/index.html';
         }}
   
   // //blerf code for keyboard movement, went over in class//
@@ -174,7 +174,7 @@
   let makeCar1Drive = (x,y) => {
    
     let car1 = document.querySelector('.car');
-     car1Position.x -= .07
+     car1Position.x -= .2
      car1.style.left = `${(car1Position.x * 100)}px`;
      car1.style.top = `${(car1Position.y * 100)}px`;
      if(collisionX1()  && collisionY1()) {
@@ -191,7 +191,7 @@
   
   let makeCar2Drive = (x,y) => {
       let car2 = document.querySelector('.bus');
-      car2Position.x -= .2
+      car2Position.x -= .25
       car2.style.left = `${(car2Position.x * 100)}px`;
       car2.style.top = `${(car2Position.y * 100)}px`;
       if(collisionX2()  && collisionY2()) {

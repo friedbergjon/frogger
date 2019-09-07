@@ -174,7 +174,7 @@
   let makeCar1Drive = (x,y) => {
    
     let car1 = document.querySelector('.car');
-     car1Position.x -= .07
+     car1Position.x -= .09
      car1.style.left = `${(car1Position.x * 100)}px`;
      car1.style.top = `${(car1Position.y * 100)}px`;
      if(collisionX1()  && collisionY1()) {
@@ -205,7 +205,7 @@
    
   let makeCar3Drive = (x,y) => {    
       let car3 = document.querySelector('.carBlue');
-      car3Position.x -= .05
+      car3Position.x -= .12
       car3.style.left = `${(car3Position.x * 100)}px`;
       car3.style.top = `${(car3Position.y * 100)}px`;
       if(collisionX3()  && collisionY3()) {
