@@ -12,6 +12,15 @@ let winPosition =  {x:16, y:.5}
 let frog = document.createElement('div');
   frog.className ='frog';
   body.appendChild(frog);
+  frog.addEventListener('touchmove', function(event) {
+    // If there's exactly one finger inside this element
+    if (event.targetTouches.length == 1) {
+      var touch = event.targetTouches[0];
+      // Place element where the finger is
+      obj.style.left = touch.pageX + 'px';
+      obj.style.top = touch.pageY + 'px';
+    }
+  }, false);
      frog.style.left = (frogPosition.x * 100) + "px";
      frog.style.top = (frogPosition.y * 100) + "px";
 
