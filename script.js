@@ -17,8 +17,8 @@ let frog = document.createElement('div');
     if (event.targetTouches.length == 1) {
       var touch = event.targetTouches[0];
       // Place element where the finger is
-      obj.style.left = touch.pageX + 'px';
-      obj.style.top = touch.pageY + 'px';
+      frog.style.left = (touch.pageX * 100)+ "px";
+      frog.style.top = (touch.pageY * 100) + "px";
     }
   }, false);
      frog.style.left = (frogPosition.x * 100) + "px";
