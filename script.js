@@ -1,7 +1,7 @@
 
 
   const body = document.body;
-let frogPosition = {x: 3, y: 5.5}
+let frogPosition = {x: 7, y: 5.5}
 let car1Position = {x:16, y:1.5}
 let car2Position = {x:16, y:1.5}
 let car3Position = {x:16, y:1.5}
