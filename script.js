@@ -230,16 +230,16 @@ newEvt.initMouseEvent(type, true, true, evt.originalTarget.ownerDocument.default
 evt.originalTarget.dispatchEvent(newEvt);
 }
 
- leftButton.addEventListener("touchstart", function(e) {
+ leftButton.addEventListener("touchstart", function(evt) {
   document.onkeydown({ keyCode: 37 });
 });
-topButton.addEventListener("touchstart", function(e) {
+topButton.addEventListener("touchstart", function(evt) {
   document.onkeydown({ keyCode: 38 });
 });
-rightButton.addEventListener("touchstart", function(e) {
+rightButton.addEventListener("touchstart", function(evt) {
   document.onkeydown({ keyCode: 39 });
 });
-bottomButton.addEventListener("touchstart", function(e) {
+bottomButton.addEventListener("touchstart", function(evt) {
   document.onkeydown({ keyCode: 40 });
 });
 
