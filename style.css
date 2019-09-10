@@ -61,7 +61,7 @@ html {
   background-image: url(frogger-images/frogger-frog.png);
   width: 80px;
   height: 60px;
-  margin: auto;
+  margin: 0 auto;
  
 
 }
@@ -73,6 +73,7 @@ html {
   background-image: url(frogger-images/frogger-car.png);
   width: 90px;
   height: 70px;
+  margin: 0 auto;
  
 }
 .bus{
@@ -80,6 +81,7 @@ html {
   background-image: url(frogger-images/frogger-bus.png);
   width: 200px;
   height: 150px;
+  margin: 0 auto;
 }
 
 .carBlue {
@@ -87,6 +89,7 @@ html {
   background-image: url(frogger-images/frogger-car-blue.png);
   width: 90px;
   height: 70px;
+  margin: 0 auto;
 }
 
 
