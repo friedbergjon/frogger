@@ -84,8 +84,6 @@ win.style.left = (winPosition.x * 100) + "px";
 win.style.top = (winPosition.y * 100) + "px";
 
 
-//code to attain height of frog for collision detection//
-// https://stackoverflow.com/questions/294250/how-do-i-retrieve-an-html-elements-actual-width-and-height
 let frogHeight = frog.offsetHeight;
 let frogWidth = frog.offsetWidth;
 let carWidth = car1.offsetWidth;
@@ -94,128 +92,127 @@ let busHeight = car2.offsetHeight;
 let busWidth = car2.offsetWidth;
 
 
-//  collision code :
-// // //  https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection
-// function collisionY1() {
-// return ((frogPosition.y > car1Position.y -.5 && frogPosition.y < car1Position.y -.5 + (carHeight/100)))
-// }
-// function collisionX1() {
-//   return (frogPosition.x > car1Position.x && frogPosition.x < car1Position.x + (carWidth/100))
 
-// }
+function collisionY1() {
+return ((frogPosition.y > car1Position.y -.5 && frogPosition.y < car1Position.y -.5 + (carHeight/100)))
+}
+function collisionX1() {
+  return (frogPosition.x > car1Position.x && frogPosition.x < car1Position.x + (carWidth/100))
 
-// function collisionY2() {
-//   return ((frogPosition.y > car2Position.y -.5 && frogPosition.y < car2Position.y -.5 + (busHeight/100)))
-//   }
-//   function collisionX2() {
-//     return (frogPosition.x > car2Position.x && frogPosition.x < car2Position.x + (busWidth/100))
+}
+
+function collisionY2() {
+  return ((frogPosition.y > car2Position.y -.5 && frogPosition.y < car2Position.y -.5 + (busHeight/100)))
+  }
+  function collisionX2() {
+    return (frogPosition.x > car2Position.x && frogPosition.x < car2Position.x + (busWidth/100))
   
-//   }
+  }
 
-//   function collisionY3() {
-//     return ((frogPosition.y > car3Position.y -.5 && frogPosition.y < car3Position.y -.5 + (carHeight/100)))
-//     }
-//     function collisionX3() {
-//       return (frogPosition.x > car3Position.x && frogPosition.x < car3Position.x + (carWidth/100))
+  function collisionY3() {
+    return ((frogPosition.y > car3Position.y -.5 && frogPosition.y < car3Position.y -.5 + (carHeight/100)))
+    }
+    function collisionX3() {
+      return (frogPosition.x > car3Position.x && frogPosition.x < car3Position.x + (carWidth/100))
     
-//     }
+    }
 
 
-//   function winRound() {
-//       if (frogPosition.y > winPosition.y -1 && frogPosition.y < winPosition.y -1 + (carHeight/100)){
-//         alert("You Win!");
-//         window.location.reload();
-//       }}
+  function winRound() {
+      if (frogPosition.y > winPosition.y -1 && frogPosition.y < winPosition.y -1 + (carHeight/100)){
+        alert("You Win!");
+        window.location.reload();
+      }}
 
 
 
-// const isCoordinateInGrid = (x, y) => {
+const isCoordinateInGrid = (x, y) => {
 
-//   return !(x < 0 || y < 0 || x*100 > window.innerWidth  || y*100 > window.innerHeight );
+  return !(x < 0 || y < 0 || x*100 > window.innerWidth  || y*100 > window.innerHeight );
 
-// }
+}
 
-// const canMoveTo = (x, y) => {
-//     if (!isCoordinateInGrid(x, y)) {
+const canMoveTo = (x, y) => {
+    if (!isCoordinateInGrid(x, y)) {
 
-//          return false;
-//      }
-//      return true;
-//  }
+         return false;
+     }
+     return true;
+ }
  
  
-//  const moveRight = () => {
-//      if (canMoveTo(frogPosition.x + .5, frogPosition.y)) {
+ const moveRight = () => {
+     if (canMoveTo(frogPosition.x + .5, frogPosition.y)) {
        
-//          frogPosition.x += .5;
-//          frog.setAttribute('style','transform:rotate(90deg)');
+         frogPosition.x += .5;
+         frog.setAttribute('style','transform:rotate(90deg)');
      
-//          moveCharacterTo();
-//      }
-//  }
+         moveCharacterTo();
+     }
+ }
  
-//  const moveLeft = () => {
-//      if (canMoveTo(frogPosition.x - .5, frogPosition.y)) {
-//          frogPosition.x -= .5;
-//          frog.setAttribute('style','transform:rotate(270deg)');
+ const moveLeft = () => {
+     if (canMoveTo(frogPosition.x - .5, frogPosition.y)) {
+         frogPosition.x -= .5;
+         frog.setAttribute('style','transform:rotate(270deg)');
              
-//          moveCharacterTo();
-//      }
-//      }
+         moveCharacterTo();
+     }
+     }
  
     
-//  const moveDown = () => {
-//      if (canMoveTo(frogPosition.x , frogPosition.y + .5)) {
-//          frogPosition.y += .5;
-//          frog.setAttribute('style','transform:rotate(180deg)');
-//          moveCharacterTo();
-//      }
-//  }
+ const moveDown = () => {
+     if (canMoveTo(frogPosition.x , frogPosition.y + .5)) {
+         frogPosition.y += .5;
+         frog.setAttribute('style','transform:rotate(180deg)');
+         moveCharacterTo();
+     }
+ }
  
-//  const moveUp = () => {
-//      if (canMoveTo(frogPosition.x , frogPosition.y - .5)) {
-//          frogPosition.y -= .5;
-//          frog.setAttribute('style','transform:rotate(360deg)');
-//          moveCharacterTo();
-//      }
-//  }
+ const moveUp = () => {
+     if (canMoveTo(frogPosition.x , frogPosition.y - .5)) {
+         frogPosition.y -= .5;
+         frog.setAttribute('style','transform:rotate(360deg)');
+         moveCharacterTo();
+     }
+ }
  
 
 
 
 
-//  document.body.addEventListener('keydown', evt => {
-//      const keyCode = evt.keyCode;
+ document.body.addEventListener('keydown', evt => {
+     const keyCode = evt.keyCode;
   
-//      if ([37, 38, 39, 40].includes(keyCode)) {
-//          evt.preventDefault();
-//      }
-//      switch (keyCode) {
-//          case 37:
-//          moveLeft();
-//          break;
-//        case 38:
-//          moveUp();
-//          break;
-//        case 39:
-//          moveRight();
-//          break;
-//        case 40:
-//          moveDown();
-//          break;
-//      }
-//  })
+     if ([37, 38, 39, 40].includes(keyCode)) {
+         evt.preventDefault();
+     }
+     switch (keyCode) {
+         case 37:
+         moveLeft();
+         break;
+       case 38:
+         moveUp();
+         break;
+       case 39:
+         moveRight();
+         break;
+       case 40:
+         moveDown();
+         break;
+     }
+ })
 
 
 
 
-//  const moveCharacterTo = (x, y) => {
-//   const charElement = document.querySelector('.frog');
-//   charElement.style.left = `${(frogPosition.x * 100)}px`;
-//   charElement.style.top = `${(frogPosition.y * 100)}px`;
-//   winRound();
+ const moveCharacterTo = (x, y) => {
+  const charElement = document.querySelector('.frog');
+  charElement.style.left = `${(frogPosition.x * 100)}px`;
+  charElement.style.top = `${(frogPosition.y * 100)}px`;
+  winRound();
   
-//  }
+ }
  
 
  
@@ -225,15 +222,15 @@ let makeCar1Drive = (x,y) => {
    car1Position.x -= .05
    car1.style.left = `${(car1Position.x * 100)}px`;
    car1.style.top = `${(car1Position.y * 100)}px`;
-  //  if(collisionX1()  && collisionY1()) {
-  //    clearInterval(car1interval)
-  //   alert("frogger died!");
-  //   window.clearInterval(car1interval);
+   if(collisionX1()  && collisionY1()) {
+     clearInterval(car1interval)
+    alert("frogger died!");
+    window.clearInterval(car1interval);
   
-  //   window.location.reload();
+    window.location.reload();
     
     
-  // }
+  }
 }
   
 
@@ -242,12 +239,12 @@ let makeCar2Drive = (x,y) => {
     car2Position.x -= .05
     car2.style.left = `${(car2Position.x * 100)}px`;
     car2.style.top = `${(car2Position.y * 100)}px`;
-    // if(collisionX2()  && collisionY2()) {
-    //   clearInterval(car2interval);
-    //   alert("frogger died!");
-    //   window.clearInterval(car2interval);
-    //   window.location.reload();
-    // }
+    if(collisionX2()  && collisionY2()) {
+      clearInterval(car2interval);
+      alert("frogger died!");
+      window.clearInterval(car2interval);
+      window.location.reload();
+    }
 }
 
  
@@ -256,12 +253,12 @@ let makeCar3Drive = (x,y) => {
     car3Position.x -= .05
     car3.style.left = `${(car3Position.x * 100)}px`;
     car3.style.top = `${(car3Position.y * 100)}px`;
-    // if(collisionX3()  && collisionY3()) {
-    //   clearInterval(car3interval);
-    //   alert("frogger died!");
-    //   window.location.reload();
-    //   //https://stackoverflow.com/questions/16955019/how-to-reload-a-page-after-the-ok-click-on-the-alert-page
-    // }
+    if(collisionX3()  && collisionY3()) {
+      clearInterval(car3interval);
+      alert("frogger died!");
+      window.location.reload();
+   
+    }
     
   }
  let car1interval =
@@ -270,7 +267,6 @@ setInterval(() => {
 
 }, 5);
 
- //Help from Mohammed in structuring interval as variable//
  let car2interval =
 setInterval(() => {
   makeCar2Drive();
