@@ -4,14 +4,15 @@ html {
   
   margin: 0 auto;
   display: inline-block;
-  position: fixed;
+  background-size: cover;
+  position: fixed, absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   z-index: -10;
    background-image: url(frogger-images/frogger-background.png);
-   background-size: cover;
+  
    image-rendering: optimizeSpeed;
    image-rendering: -moz-crisp-edges;
    image-rendering: -o-crisp-edges;
@@ -64,21 +65,21 @@ html {
 
 
 .car {
-  position: relative;
+  position: absolute;
   background-image: url(frogger-images/frogger-car.png);
   width: 90px;
   height: 70px;
  
 }
 .bus{
-  position: relative;
+  position: absolute;
   background-image: url(frogger-images/frogger-bus.png);
   width: 200px;
   height: 150px;
 }
 
 .carBlue {
-  position: relative;
+  position: absolute;
   background-image: url(frogger-images/frogger-car-blue.png);
   width: 90px;
   height: 70px;

@@ -2,9 +2,9 @@
 
   const body = document.body;
 let frogPosition = {x: 3, y: 5.5}
-let car1Position = {x:16, y:3}
-let car2Position = {x:16, y:1.5}
-let car3Position = {x:16, y:2}
+let car1Position = {x:16, y:4}
+let car2Position = {x:16, y:2}
+let car3Position = {x:16, y:5}
 let winPosition =  {x:16, y:.5}
 let leftButtonPosition = {x:0, y:0}
 let rightButtonPosition = {x:0, y:0}
@@ -283,9 +283,9 @@ setInterval(() => {
 
 setInterval(()=>{
 
-car1Position = {x:16, y:3}
-car2Position = {x:16, y:1.5}
-car3Position = {x:16, y:2}
+car1Position = {x:16, y:4}
+car2Position = {x:16, y:2}
+car3Position = {x:16, y:5}
   
  makeCar1Drive(); 
  makeCar2Drive();
