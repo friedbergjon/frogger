@@ -29,7 +29,8 @@ html {
   position: absolute;
   width:30%;
   height: 100%;
-  position: left, center, inline
+  position: left, center, inline;
+  pointer-events: none;
 }
 
 .rightBox {
@@ -37,7 +38,8 @@ html {
   position: absolute;
   width:30%;
   height: 100%;
-  position: right, center, inline
+  position: right, center, inline;
+  
 }
 
 .topBox {
