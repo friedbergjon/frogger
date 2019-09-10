@@ -2,7 +2,7 @@
 
   const body = document.body;
 let frogPosition = {x: 3, y: 5.5}
-let car1Position = {x:16, y:-1}
+let car1Position = {x:16, y:4}
 let car2Position = {x:16, y:2}
 let car3Position = {x:16, y:5}
 let winPosition =  {x:16, y:.5}
@@ -283,7 +283,7 @@ setInterval(() => {
 
 setInterval(()=>{
 
-car1Position = {x:16, y:-1}
+car1Position = {x:16, y:4}
 car2Position = {x:16, y:2}
 car3Position = {x:16, y:5}
   
