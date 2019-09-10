@@ -69,7 +69,7 @@ html {
 
 
 .car {
-  position: relative;
+  position: absolute;
   background-image: url(frogger-images/frogger-car.png);
   width: 90px;
   height: 70px;
@@ -78,7 +78,7 @@ html {
  
 }
 .bus{
-  position: relative;
+  position: absolute;
   background-image: url(frogger-images/frogger-bus.png);
   width: 200px;
   height: 150px;
@@ -86,7 +86,7 @@ html {
 }
 
 .carBlue {
-  position: relative;
+  position: absolute;
   background-image: url(frogger-images/frogger-car-blue.png);
   width: 90px;
   height: 70px;
