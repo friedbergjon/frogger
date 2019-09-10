@@ -143,6 +143,7 @@ const canMoveTo = (x, y) => {
      return true;
  }
  
+ 
  const moveRight = () => {
      if (canMoveTo(frogPosition.x + .5, frogPosition.y)) {
        
@@ -179,6 +180,10 @@ const canMoveTo = (x, y) => {
      }
  }
  
+
+
+
+
  document.body.addEventListener('keydown', evt => {
      const keyCode = evt.keyCode;
   
@@ -200,48 +205,7 @@ const canMoveTo = (x, y) => {
          break;
      }
  })
- 
- function onTouch(evt) {
-  evt.preventDefault();
-  if (evt.touches.length > 1 || (evt.type == "touchend" && evt.touches.length > 0))
-    return;
 
-  var newEvt = document.createEvent("MouseEvents");
-  var type = null;
-  var touch = null;
-
-  switch (evt.type) {
-    case "touchstart": 
-      type = "mousedown";
-      touch = evt.changedTouches[0];
-      break;
-    case "touchmove":
-      type = "mousemove";
-      touch = evt.changedTouches[0];
-      break;
-    case "touchend":        
-      type = "mouseup";
-      touch = evt.changedTouches[0];
-      break;
-  }
-newEvt.initMouseEvent(type, true, true, evt.originalTarget.ownerDocument.defaultView, 0,
-  touch.screenX, touch.screenY, touch.clientX, touch.clientY,
-  evt.ctrlKey, evt.altKey, evt.shiftKey, evt.metaKey, 0, null);
-evt.originalTarget.dispatchEvent(newEvt);
-}
-
- leftButton.addEventListener("touchstart", function(evt) {
-  document.onkeydown({ keyCode: 37 });
-});
-topButton.addEventListener("touchstart", function(evt) {
-  document.onkeydown({ keyCode: 38 });
-});
-rightButton.addEventListener("touchstart", function(evt) {
-  document.onkeydown({ keyCode: 39 });
-});
-bottomButton.addEventListener("touchstart", function(evt) {
-  document.onkeydown({ keyCode: 40 });
-});
 
 
 
@@ -334,5 +298,11 @@ car3Position = {x:16, y:2}
  makeCar3Drive();
  
 },6000);
+
+leftButton.addEventListener("touchstart",  moveLeft(), false);
+topButton.addEventListener("touchstart",  moveUp(), false);
+rightButton.addEventListener("touchstart", moveRight(), false);
+bottomButton.addEventListener("touchstart", moveDown(), false);
+
 
 
