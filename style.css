@@ -70,6 +70,7 @@ html {
 @media only screen and (max-width: 40em) {
   .frog {
     display: block;
+    visibility: visible;
     position: absolute;
     background-image: url(frogger-images/frogger-frog.png);
     width: 80px;
