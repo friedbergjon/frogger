@@ -80,8 +80,8 @@ html {
 .car {
   position: absolute;
   background-image: url(frogger-images/frogger-car.png);
-  width: 90px;
-  height: 70px;
+  width: 5.5em;
+  height: 4em;
   margin: 0 auto;
   
  
@@ -89,16 +89,16 @@ html {
 .bus{
   position: absolute;
   background-image: url(frogger-images/frogger-bus.png);
-  width: 200px;
-  height: 150px;
+  width: 12.5em;
+  height: 8em;
   margin: 0 auto;
 }
 
 .carBlue {
   position: absolute;
   background-image: url(frogger-images/frogger-car-blue.png);
-  width: 90px;
-  height: 70px;
+  width: 5.4em;
+  height: 4em;
   margin: 0 auto;
 }
 
