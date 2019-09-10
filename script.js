@@ -9,7 +9,7 @@ let winPosition =  {x:16, y:.5}
 let leftButtonPosition = {x:0, y:0}
 let rightButtonPosition = {x:8, y:0}
 let topButtonPosition = {x:0, y:0}
-let bottomButtonPosition = {x:10, y:10}
+let bottomButtonPosition = {x:0, y:0}
  
 
 
