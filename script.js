@@ -6,6 +6,10 @@ let car1Position = {x:16, y:3}
 let car2Position = {x:16, y:2}
 let car3Position = {x:16, y:4}
 let winPosition =  {x:16, y:.5}
+let leftButtonPosition = {x:0, y:0}
+let rightButtonPosition = {x:8, y:0}
+let topButtonPosition = {x:0, y:0}
+let bottomButtonPosition = {x:10, y:10}
  
 
 
@@ -25,11 +29,46 @@ let frog = document.createElement('div');
      frog.style.top = (frogPosition.y * 100) + "px";
 
 
-    
+let leftButton = document.createElement('div');
+leftButton.className = 'leftBox';
+body.appendChild(leftButton);  
+
+leftButton.style.left = (leftButtonPosition.x *100) + "px";
+leftButton.style.top = (leftButtonPosition.y *100) + "px";
+
+
+
+let rightButton = document.createElement('div');
+rightButton.className = 'rightBox';
+body.appendChild(rightButton);  
+
+rightButton.style.left = (rightButtonPosition.x *100) + "px";
+rightButton.style.top = (rightButtonPosition.y *100) + "px";
+
+
+
+let topButton = document.createElement('div');
+topButton.className = 'topBox';
+body.appendChild(topButton);  
+
+topButton.style.left = (topButtonPosition.x *100) + "px";
+topButton.style.top = (topButtonPosition.y *100) + "px";
+
+
+let bottomButton = document.createElement('div');
+bottomButton.className = 'bottomBox';
+body.appendChild(bottomButton);  
+
+bottomButton.style.left = (bottomButtonPosition.x *100) + "px";
+bottomButton.style.bottom = (bottomButtonPosition.y *100) + "px";
+
+
+
 
 let car1 = document.createElement('div');
 car1.className = 'car';
 body.appendChild(car1);
+
 car1.style.left = (car1Position.x * 100) + "px";
 car1.style.top = (car1Position.y * 100) + "px";
 
@@ -61,6 +100,7 @@ let carWidth = car1.offsetWidth;
 let carHeight = car1.offsetHeight;
 let busHeight = car2.offsetHeight;
 let busWidth = car2.offsetWidth;
+
 
 //  collision code :
 // // //  https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection
@@ -168,6 +208,7 @@ const canMoveTo = (x, y) => {
          break;
      }
  })
+//  
 
  //with help from Rachel//
  const moveCharacterTo = (x, y) => {
