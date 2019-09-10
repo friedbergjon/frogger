@@ -21,23 +21,23 @@ html {
 }
 .leftBox {
   color: black;
-  position: fixed;
+  position: absolute;
   width:30%;
   height: 100%;
-  position: left, inline
+  position: left, center, inline
 }
 
 .rightBox {
   color: black;
-  position: fixed;
+  position: absolute;
   width:30%;
   height: 100%;
-  position: right, inline
+  position: right, center, inline
 }
 
 .topBox {
   color: black;
-  position: fixed;
+  position: absolute;
   width:100%;
   height: 30%;
   position: block, center, top
@@ -45,10 +45,10 @@ html {
 
 .bottomBox {
   color: black;
-  position: fixed;
+  position: absolute;
   width:100%;
   height: 30%;
-  position: bottom, center
+  position: block, center, bottom
 }
 
 .frog {

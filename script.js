@@ -7,7 +7,7 @@ let car2Position = {x:16, y:2}
 let car3Position = {x:16, y:4}
 let winPosition =  {x:16, y:.5}
 let leftButtonPosition = {x:0, y:0}
-let rightButtonPosition = {x:8, y:0}
+let rightButtonPosition = {x:0, y:0}
 let topButtonPosition = {x:0, y:0}
 let bottomButtonPosition = {x:0, y:0}
  
@@ -16,15 +16,7 @@ let bottomButtonPosition = {x:0, y:0}
 let frog = document.createElement('div');
   frog.className ='frog';
   body.appendChild(frog);
-  frog.addEventListener('touchmove', function(event) {
-    // If there's exactly one finger inside this element
-    if (event.targetTouches.length == 1) {
-      var touch = event.targetTouches[0];
-      // Place element where the finger is
-      frog.style.left = (touch.pageX * 100)+ "px";
-      frog.style.top = (touch.pageY * 100) + "px";
-    }
-  }, false);
+
      frog.style.left = (frogPosition.x * 100) + "px";
      frog.style.top = (frogPosition.y * 100) + "px";
 
@@ -42,7 +34,7 @@ let rightButton = document.createElement('div');
 rightButton.className = 'rightBox';
 body.appendChild(rightButton);  
 
-rightButton.style.left = (rightButtonPosition.x *100) + "px";
+rightButton.style.right = (rightButtonPosition.x *100) + "px";
 rightButton.style.top = (rightButtonPosition.y *100) + "px";
 
 
