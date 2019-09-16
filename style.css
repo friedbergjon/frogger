@@ -3,7 +3,9 @@ body,
 html {
   
   margin: 0 auto;
-  display: inline-block;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0% 0%;
