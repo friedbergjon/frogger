@@ -140,8 +140,11 @@ const canMoveTo = (x, y) => {
      return true;
  }
  
- 
- const moveRight = () => {
+
+ document.querySelector('.rightBox').addEventListener('touchstart', moveRight);
+ document.querySelector('.rightBox').addEventListener('touchend', moveRight);
+
+function moveRight(){
      if (canMoveTo(frogPosition.x + .5, frogPosition.y)) {
        
          frogPosition.x += .5;
@@ -153,6 +156,7 @@ const canMoveTo = (x, y) => {
  
   
 document.querySelector('.leftBox').addEventListener('touchstart', moveLeft);
+document.querySelector('.leftBox').addEventListener('touchend', moveLeft);
 
 function moveLeft(){
      if (canMoveTo(frogPosition.x - .5, frogPosition.y)) {
@@ -163,16 +167,20 @@ function moveLeft(){
      }
      }
  
-    
- const moveDown = () => {
+document.querySelector('.bottomBox').addEventListener('touchstart', moveDown);
+document.querySelector('.bottomBox').addEventListener('touchend', moveDown);
+
+function moveDown(){    
      if (canMoveTo(frogPosition.x , frogPosition.y + .5)) {
          frogPosition.y += .5;
          frog.setAttribute('style','transform:rotate(180deg)');
          moveCharacterTo();
      }
  }
- 
- const moveUp = () => {
+
+document.querySelector('.topBox').addEventListener('touchstart', moveUp);
+document.querySelector('.topBox').addEventListener('touchend', moveDown);
+function moveUp(){  
      if (canMoveTo(frogPosition.x , frogPosition.y - .5)) {
          frogPosition.y -= .5;
          frog.setAttribute('style','transform:rotate(360deg)');
