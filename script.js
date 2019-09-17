@@ -7,8 +7,8 @@ let car2Position = {x:16, y:1.5}
 let car3Position = {x:16, y:1.5}
 let winPosition =  {x:16, y:.5}
 let leftButtonPosition = {x:0, y:0}
-let rightButtonPosition = {x:0, y:0}
 let topButtonPosition = {x:0, y:0}
+let rightButtonPosition = {x:0, y:0}
 let bottomButtonPosition = {x:0, y:0}
 
 
@@ -141,7 +141,6 @@ const canMoveTo = (x, y) => {
  }
  
  document.querySelector('.leftBox').addEventListener('touchstart', moveLeft);
-
 
  function moveLeft(){
       if (canMoveTo(frogPosition.x - .5, frogPosition.y)) {
