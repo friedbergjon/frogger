@@ -1,7 +1,7 @@
 
 
   const body = document.body;
-let frogPosition = {x: 4, y: 5.5}
+let frogPosition = {x: 3, y: 2.5}
 let car1Position = {x:16, y:1.5}
 let car2Position = {x:16, y:1.5}
 let car3Position = {x:16, y:1.5}
@@ -10,7 +10,7 @@ let leftButtonPosition = {x:0, y:0}
 let rightButtonPosition = {x:0, y:0}
 let topButtonPosition = {x:0, y:0}
 let bottomButtonPosition = {x:0, y:0}
- 
+
 
 
 let frog = document.createElement('div');
@@ -151,6 +151,9 @@ const canMoveTo = (x, y) => {
      }
  }
  
+  
+document.querySelector('.leftBox').addEventListener('touchstart', moveLeft);
+
  const moveLeft = () => {
      if (canMoveTo(frogPosition.x - .5, frogPosition.y)) {
          frogPosition.x -= .5;
@@ -178,7 +181,7 @@ const canMoveTo = (x, y) => {
  }
  
 
-
+ 
 
 
  document.body.addEventListener('keydown', evt => {
@@ -295,10 +298,6 @@ car3Position = {x:16, y:1.5}
  
 },6000);
 
-leftButton.addEventListener("touchstart",  moveLeft(), false);
-topButton.addEventListener("touchstart",  moveUp(), false);
-rightButton.addEventListener("touchstart", moveRight(), false);
-bottomButton.addEventListener("touchstart", moveDown(), false);
 
 
 
