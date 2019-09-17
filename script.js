@@ -142,7 +142,7 @@ const canMoveTo = (x, y) => {
  
 
  document.querySelector('.rightBox').addEventListener('touchstart', moveRight);
- document.querySelector('.rightBox').addEventListener('touchend', moveRight);
+
 
 function moveRight(){
      if (canMoveTo(frogPosition.x + .5, frogPosition.y)) {
@@ -156,7 +156,7 @@ function moveRight(){
  
   
 document.querySelector('.leftBox').addEventListener('touchstart', moveLeft);
-document.querySelector('.leftBox').addEventListener('touchend', moveLeft);
+
 
 function moveLeft(){
      if (canMoveTo(frogPosition.x - .5, frogPosition.y)) {
@@ -168,7 +168,7 @@ function moveLeft(){
      }
  
 document.querySelector('.bottomBox').addEventListener('touchstart', moveDown);
-document.querySelector('.bottomBox').addEventListener('touchend', moveDown);
+
 
 function moveDown(){    
      if (canMoveTo(frogPosition.x , frogPosition.y + .5)) {
@@ -179,7 +179,7 @@ function moveDown(){
  }
 
 document.querySelector('.topBox').addEventListener('touchstart', moveUp);
-document.querySelector('.topBox').addEventListener('touchend', moveDown);
+
 function moveUp(){  
      if (canMoveTo(frogPosition.x , frogPosition.y - .5)) {
          frogPosition.y -= .5;
