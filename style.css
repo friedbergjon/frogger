@@ -6,7 +6,6 @@ html {
   overflow: hidden;
   background-image: url(frogger-images/frogger-background.png);
   margin: 0 auto;
-
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,7 +18,10 @@ html {
   width:30%;
   height: 100%;
   position: left, center, inline;
-  
+  background-image: url(frogger-images/leftArrow.png);
+  background-size: 20%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .rightBox {
@@ -28,7 +30,10 @@ html {
   width:30%;
   height: 100%;
   position: right, center, inline;
-  
+  background-image: url(frogger-images/rightArrow.png);
+  background-size:20%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .topBox {
@@ -36,7 +41,11 @@ html {
   position: absolute;
   width:100%;
   height: 30%;
-  position: block, center, top
+  position: block, center, top;
+  background-image: url(frogger-images/upArrow.png);
+  background-size: 5%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .bottomBox {
@@ -44,7 +53,11 @@ html {
   position: absolute;
   width:100%;
   height: 30%;
-  position: block, center, bottom
+  position: block, center, bottom;
+  background-image: url(frogger-images/downArrow.png);
+  background-size: 5%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .frog {
