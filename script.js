@@ -140,6 +140,17 @@ const canMoveTo = (x, y) => {
      return true;
  }
  
+ document.querySelector('.leftBox').addEventListener('touchstart', moveLeft);
+
+
+ function moveLeft(){
+      if (canMoveTo(frogPosition.x - .5, frogPosition.y)) {
+          frogPosition.x -= .5;
+          frog.setAttribute('style','transform:rotate(270deg)');
+              
+          moveCharacterTo();
+      }
+      }
 
  document.querySelector('.rightBox').addEventListener('touchstart', moveRight);
 
@@ -154,18 +165,6 @@ function moveRight(){
      }
  }
  
-  
-document.querySelector('.leftBox').addEventListener('touchstart', moveLeft);
-
-
-function moveLeft(){
-     if (canMoveTo(frogPosition.x - .5, frogPosition.y)) {
-         frogPosition.x -= .5;
-         frog.setAttribute('style','transform:rotate(270deg)');
-             
-         moveCharacterTo();
-     }
-     }
  
 document.querySelector('.bottomBox').addEventListener('touchstart', moveDown);
 
