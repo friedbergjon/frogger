@@ -177,7 +177,7 @@ function moveUp(){
  }
  document.querySelector('.leftBox').addEventListener('touchstart', moveLeft);
 
- function moveLeft(){
+function moveLeft(){
       if (canMoveTo(frogPosition.x - .5, frogPosition.y)) {
           frogPosition.x -= .5;
           frog.setAttribute('style','transform:rotate(270deg)');

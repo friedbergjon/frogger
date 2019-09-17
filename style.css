@@ -19,7 +19,7 @@ html {
   width:30%;
   height: 100%;
   position: left, center, inline;
-  pointer-events: none;
+  
 }
 
 .rightBox {
