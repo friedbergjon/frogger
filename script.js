@@ -1,16 +1,15 @@
 
 
   const body = document.body;
-let frogPosition = {x: 3.5, y: 2.5}
+let frogPosition = {x: 3, y: 2.5}
 let car1Position = {x:16, y:1.5}
 let car2Position = {x:16, y:1.5}
 let car3Position = {x:16, y:1.5}
 let winPosition =  {x:16, y:.5}
-
-let topButtonPosition = {x:0, y:0}
-let rightButtonPosition = {x:0, y:0}
-let bottomButtonPosition = {x:0, y:0}
 let leftButtonPosition = {x:0, y:0}
+let rightButtonPosition = {x:0, y:0}
+let topButtonPosition = {x:0, y:0}
+let bottomButtonPosition = {x:0, y:0}
 
 
 
@@ -141,16 +140,6 @@ const canMoveTo = (x, y) => {
      return true;
  }
  
- document.querySelector('.leftBox').addEventListener('touchstart', moveLeft);
-
- function moveLeft(){
-      if (canMoveTo(frogPosition.x - .5, frogPosition.y)) {
-          frogPosition.x -= .5;
-          frog.setAttribute('style','transform:rotate(270deg)');
-              
-          moveCharacterTo();
-      }
-      }
 
  document.querySelector('.rightBox').addEventListener('touchstart', moveRight);
 
@@ -186,7 +175,17 @@ function moveUp(){
          moveCharacterTo();
      }
  }
- 
+ document.querySelector('.leftBox').addEventListener('touchstart', moveLeft);
+
+ function moveLeft(){
+      if (canMoveTo(frogPosition.x - .5, frogPosition.y)) {
+          frogPosition.x -= .5;
+          frog.setAttribute('style','transform:rotate(270deg)');
+              
+          moveCharacterTo();
+      }
+      }
+
 
  
 
